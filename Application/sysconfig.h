@@ -20,7 +20,7 @@ typedef	int8_t 		s8;
 //======
 #define Delay_ms MyDelayMs
 //#define ANO_DT_USE_USART2
-//#define ANO_DT_USE_USART3
+#define ANO_DT_USE_USART3
 //#define ANO_DT_USE_USB
 //======
 #define HW_TYPE	05

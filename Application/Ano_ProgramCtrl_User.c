@@ -2,7 +2,7 @@
 #include "Ano_Math.h"
 
 
-#define MAX_PC_XYVEL_CMPS  20
+#define MAX_PC_XYVEL_CMPS  28
 #define MAX_PC_ZVEL_CMPS   10
 #define MAX_PC_PAL_DPS     100
 

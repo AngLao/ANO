@@ -20,7 +20,7 @@ u8 U1TxInCnt = 0;
 u8 U1TxOutCnt = 0;
 //串口收发环形缓冲区定义
 RINGBUFF_T U1rxring;
-volatile unsigned char UART1Buffer[1280];
+volatile unsigned char UART1Buffer[128*15];
 void UART1_IRQHandler(void)
 {
 	uint8_t com_data;
@@ -47,7 +47,7 @@ void UART1_IRQHandler(void)
 void Drv_Uart1Init(uint32_t baudrate)
 {
 	//环形缓冲区初始化
-	RingBuffer_Init(&U1rxring, (unsigned char*)UART1Buffer, 1, 1280);
+	RingBuffer_Init(&U1rxring, (unsigned char*)UART1Buffer, 1, 128*15);
 	
 	ROM_SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
 	ROM_SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
@@ -282,7 +282,7 @@ void UART5_IRQHandler(void)
 	{			
 		com_data=ROM_UARTCharGet(UART2_BASE);
 		openMV_res = com_data;
-//		Drv_Uart3SendBuf( &com_data , 1 );
+		Drv_Uart3SendBuf( &com_data , 1 );
 //		//ANO_DT_Data_Receive_Prepare(com_data);
 //		#if defined(USE_LASER)
 //		Drv_Laser_GetOneByte(com_data);

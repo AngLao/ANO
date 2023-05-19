@@ -92,8 +92,10 @@ void Drv_BspInit(void)
 	
 	//ADC初始化
 	Drv_AdcInit();
+	
 	//滴答时钟初始化
 	SysTick_Init();	
+	
 	//串口初始化
 	
 	Drv_Uart1Init(3000000);	//接UWB

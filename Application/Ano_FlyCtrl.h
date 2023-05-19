@@ -50,6 +50,7 @@ unsigned char broadcasting_Task(unsigned char dT_ms);
 unsigned char UWBTest_Task(unsigned char dT_ms);
 
 
+unsigned char UWBTest_Task2(unsigned char dT_ms);
 
 extern u8 use_line_opmv;
 

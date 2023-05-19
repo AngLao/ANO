@@ -159,6 +159,7 @@ static void Loop_Task_4(u32 dT_us)	//20ms执行一次
 	//通道二一键任务（swb杆往下拨）
 	if(onekey.val){
 		 onekey.val = UWBTest_Task(20);
+//		 onekey.val = UWBTest_Task2(20);
 		
 	}
 	
@@ -166,6 +167,10 @@ static void Loop_Task_4(u32 dT_us)	//20ms执行一次
 	
 	/*位置速度环控制*/
 	Loc_1level_Ctrl(20,CH_N); 
+	
+	//解析UWB数据
+	UWB_Get_Data_Task(20);
+	
 
 }
 
@@ -179,9 +184,6 @@ static void Loop_Task_5(u32 dT_us)	//50ms执行一次
 	Thermostatic_Ctrl_Task(50);
 	/*延时存储任务*/
 	Ano_Parame_Write_task(50); 
-	//解析UWB数据
-	UWB_Get_Data_Task(50);
-	
 	
 }
 

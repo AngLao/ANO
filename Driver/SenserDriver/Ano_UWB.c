@@ -26,8 +26,9 @@ static u16 uwb_check_time;
 void UWB_Get_Data_Task(u8 dT_ms)
 { 
 	//读环形缓冲区 
-	static  int RingBufferDataLen = 0;
-	static unsigned char pData[1280]; 
+	static int RingBufferDataLen = 0;
+	//每帧UWB数据包128字节
+	static unsigned char pData[128*15]; 
 	RingBufferDataLen = RingBuffer_GetCount(&U1rxring) ;
 	//解析uwb数据
 	if(RingBufferDataLen){
